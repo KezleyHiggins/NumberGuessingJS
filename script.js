@@ -58,7 +58,7 @@ function OnGuessClick() {
     const guess = Number(document.querySelector(".guess").value);    
 
     if(!guess){
-      message.textContent = "🛑 No Number!"
+      message.textContent = "🛑 No Number!";
     }
     else if(guess === secretNumber){
       message.textContent = "🎉 Correct!"
@@ -68,11 +68,11 @@ function OnGuessClick() {
       hasWon = true;
     }
     else if(guess > secretNumber){
-      message.textContent = "👆🏻 Too high!"
+      message.textContent = "👆🏻 Too high!";
       scoreTracker.DecreaseScore();
     }
     else if(guess < secretNumber){
-      message.textContent = "👇🏻 Too low!"
+      message.textContent = "👇🏻 Too low!";
       scoreTracker.DecreaseScore();
     }
     
@@ -80,15 +80,16 @@ function OnGuessClick() {
         canPlay = false;
         hasLost = true;
         console.log(hasLost);
-        message.textContent = "💥 You lost!"
+        message.textContent = "💥 You lost!";
     }
 }
 
 function OnAgainClick(){
     document.querySelector(".guess").value = "";
+    numberDisplayer.textContent = "?";
+    message.textContent = "Start guessing...";
     scoreTracker.ResetScore();
     secretNumber = Math.trunc(Math.random()*20)+1;
-    numberDisplayer.textContent = "?";
     canPlay = true;
     hasWon = false;
     hasLost = false;
@@ -96,24 +97,24 @@ function OnAgainClick(){
 
 function UpdateVisuals(){
     if(canPlay == true){
-        document.querySelector("#checkButton").style.backgroundColor = "#eee"
+        document.querySelector("#checkButton").style.backgroundColor = "#eee";
     }
     else{
-        document.querySelector("#checkButton").style.backgroundColor = "#8f8c8c"
+        document.querySelector("#checkButton").style.backgroundColor = "#8f8c8c";
     }
 
     if(hasWon === true){
-        body.style.backgroundColor = "#54b811"
+        body.style.backgroundColor = "#54b811";
     }
     else if(hasLost === true){
-        body.style.backgroundColor = "#b81111"
+        body.style.backgroundColor = "#b81111";
     }
     else{
-        body.style.backgroundColor = "#222"
+        body.style.backgroundColor = "#222";
     }
 }
 
-// Main Code
+// Main
 
 document.querySelector(".check").addEventListener("click", function()
 { OnGuessClick(); UpdateVisuals(); });
