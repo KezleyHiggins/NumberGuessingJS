@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+@import url("");
+
+@font-face {
+  font-family: kenneySpace;
+  src: url(Kenney\ Space.ttf);
+}
 
 * {
   margin: 0;
@@ -12,9 +18,9 @@ html {
 }
 
 body {
-  font-family: "Press Start 2P", sans-serif;
+  font-family: "kenneySpace", sans-serif;
   color: #eee;
-  background-color: #222;
+  background-image: linear-gradient(to top left, #3e3682 0%, #5c6fd8 100%);
   /* background-color: #60b347; */
 }
 
@@ -59,8 +65,9 @@ h1 {
 .number {
   background: #eee;
   color: #333;
-  font-size: 6rem;
-  width: 15rem;
+  font-size: 5rem;
+  width: 13rem;
+  height: 13rem;
   padding: 3rem 0rem;
   text-align: center;
   position: absolute;
@@ -120,4 +127,8 @@ h1 {
 
 #checkButton {
   background-color: #eee;
+}
+
+.heading {
+  font-size: 35px;
 }
